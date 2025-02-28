@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Roger | Portfólio</title>
+  </head>
+  <body>
+    <div class="particulas"></div>
+
+    <nav classe="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Início</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projeto" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="#contato" class="menu-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+      <img
+        src="./img/Foto Roger.jpg"
+        alt="Foto de Roger Ferreira"
+        class="foto-perfil"
+      />
+
+      <h1>Roger Ferriera</h1>
+      <p class="cabecalho-sub-titulo">Desenvolvedor Full Stack Júnior</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobe Mim</h2>
+
+      <div class="sobre-conteudo">
+        <p class="sobre-paragrafo">
+          💻 Desenvolvedor Full Stack | React | Node.js | TypeScript | SQL Sou
+          um Desenvolvedor Full Stack apaixonado por tecnologia e construção de
+          soluções eficientes. Com experiência em React, Node.js, TypeScript e
+          bancos de dados SQL , Minha trajetória começou na área de suporte
+          técnico, o que me deu uma base sólida para resolver problemas de forma
+          ágil e estratégica. Hoje, aplico esse conhecimento no desenvolvimento
+          de sistemas completos, desde a concepção do front-end até a
+          estruturação do back-en 🔹 Tecnologias principais: React, React
+          Native, Node.js, TypeScript, Next.js, REST API 🔹 **BBanco de Dados:
+          MySQL, 🔹 Ferramentas: Git, Git 💡 Sempre em busca de novos desafios,
+          estou pronto para contribuir com tempos inovadores e projetos
+          impactantes . Vamos construir algo incrível juntos? 📩 Contato:
+          rogerferreira.dev@gmail.com
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-site">
+          <img
+            src="./img/Projeto-1.jpg"
+            alt="Projeto 1"
+            class="projetos-imagem"
+          />
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Site de Serviços</h3>
+            <p class="paragrafo-projetos">
+              Site para divulgar a prestação de serviços de uma empresa de
+              encanamento.
+            </p>
+          </div>
+        </div>
+
+        <div class="projetos-site">
+          <img
+            src="./img/Projeto-2.jpg"
+            alt="Projeto 2"
+            class="projetos-imagem"
+          />
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Página de Viagens</h3>
+            <p class="paragrafo-projetos">
+              Uma páigina interativa com roteiros das viagens que são mais
+              procuradas pelos turistas.
+            </p>
+          </div>
+        </div>
+
+        <div class="projetos-site">
+          <img
+            src="./img/Projeto-3.jpg"
+            alt="Projeto 3"
+            class="projetos-imagem"
+          />
+
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Cafeteria</h3>
+            <p class="paragrafo-projetos">
+              Site de uma cafeteria online e moderna com um atrativo e delicioso
+              café expresso que é o inrresistível.
+            </p>
+          </div>
+        </div>
+
+        <div class="projetos-site">
+          <img
+            src="./img/Projeto-4.png"
+            alt="Projeto 4"
+            class="projetos-imagem"
+          />
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Replica da Netflix</h3>
+            <p class="paragrafo-projetos">
+              ma replica da interface da Netflix, com uma interface
+              relacionando o login ao usuário.
+            </p>
+          </div>
+        </div>
+
+          <div class="projetos-site">
+            <img
+              src="./img/Projeto-5.png"
+              alt="Projeto 5"
+              class="projetos-imagem"
+            />
+            <div class="caixa-textos-projeto">
+              <h3 class="info-projetos">Página de um Cronômetro</h3>
+              <p class="paragrafo-projetos">
+                Sie de um cronômetro criado para ser usado em qualquer lugar.
+              </p>
+            </div>
+          </div>
+          </div>
+      </div>
+
+    </section>
+
+    <section id="Contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em Contato</h2>
+      <form class="formulario-contato" id="formulario" onsubmit="enviarWhat(event)">
+        <div class="grupo-form">
+          <input placeholder="Nome" class="campo-form" id="nome" />
+        </div>
+
+        <div class="grupo-form">
+          <textarea
+            class="campo-form"
+            placeholder="Digite sua Mensagem"
+            rows="6"
+            id="mensagem"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="botao-form">Enviar whatsApp</button>
+      </form>
+    </section>
+
+    <script>
+
+      function enviarWhat(event) {
+        event.preventDefault();
+          
+        const nome = document.getElementById("nome").value;
+        const mensagem = document.getElementById("mensagem").value;
+        const telefone = "5534996360182";
+
+        const texto = `Ola! Me chamo ${nome}, ${mensagem}`
+        const msgFormatada = encodeURIComponent(texto)
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+        window.open(url, "_blank")
+      }
+        
+    </script>
+  </body>
+</html>
